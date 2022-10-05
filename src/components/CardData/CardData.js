@@ -4,10 +4,12 @@ import Card from '../Card/Card';
 
 const CardData = () => {
     const cardData = useLoaderData();
+    console.log(cardData.meals);
     return (
-        <div>
+        <div className='grid lg:grid-cols-3 grid-cols-1 md:grid-cols-2'>
+        
             {
-                cardData.map(card => <Card key={card.idMeal} card={card}></Card>)
+                (cardData.meals).map(card => <Card key={card.idMeal} card={card}></Card>)
             }
         </div>
     );

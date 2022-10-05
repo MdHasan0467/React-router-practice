@@ -5,6 +5,7 @@ import Home from './components/Home/Home';
 import About from './components/About/About';
 import CardData from './components/CardData/CardData';
 import Card from './components/Card/Card';
+import Cocktails from './components/Cocktails/Cocktails';
 
 function App() {
   const router = createBrowserRouter([
@@ -21,12 +22,19 @@ function App() {
         element : <About></About>
       },
       {
-    path : '/cardData',
+    path : '/meal',
     loader: async()=>{
-       return fetch('www.themealdb.com/api/json/v1/1/search.php?s')
+       return fetch('https://www.themealdb.com/api/json/v1/1/search.php?s')
     },
     element : <CardData></CardData>
-  }
+      },
+      {
+    path : '/cocktail',
+    loader: async()=>{
+       return fetch('https://www.thecocktaildb.com/api/json/v1/1/search.php?s')
+    },
+    element : <Cocktails></Cocktails>
+  },
     ],
     
   },
