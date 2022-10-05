@@ -1,5 +1,4 @@
 import React from 'react';
-import CardData from '../CardData/CardData';
 
 const Home = () => {
     return (
